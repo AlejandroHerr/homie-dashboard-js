@@ -1,0 +1,11 @@
+{
+  "presets": [["env",{
+    "include": ["babel-plugin-transform-es2015-spread"],
+    "browsers": ["last 2 versions"]
+  }], "react"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-es2015-spread",
+    "react-hot-loader/babel"
+  ]
+}
