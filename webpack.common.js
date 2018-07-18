@@ -1,9 +1,5 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: './src/index.html',
-  filename: './index.html',
-});
 
 module.exports = {
   entry: './src/index.tsx',
@@ -66,9 +62,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin],
-  devtool: 'eval-source-map',
-  devServer: {
-    historyApiFallback: true,
-  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+    }),
+  ],
 };
