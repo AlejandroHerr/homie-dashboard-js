@@ -6,14 +6,15 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+  entry: './src/index.tsx',
+  resolve: {
+    extensions: ['.js', '.json', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        test: /\.(ts|tsx)$/,
+        loader: 'awesome-typescript-loader',
       },
       {
         test: /\.scss$/,
@@ -23,9 +24,10 @@ module.exports = {
             loader: 'style-loader',
           },
           {
-            loader: 'css-loader',
+            loader: 'typings-for-css-modules-loader',
             options: {
               modules: true,
+              namedExport: true,
               importLoaders: 1,
               localIdentName: '[name]_[local]_[hash:base64:5]',
               sourceMap: true,
@@ -48,6 +50,17 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
           },
         ],
       },

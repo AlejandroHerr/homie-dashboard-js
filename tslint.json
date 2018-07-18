@@ -1,20 +1,13 @@
 {
-  "extends": [
-    "tslint:latest",
-    "tslint-config-prettier",
-  ],
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
   "rules": {
-    "interface-name": [
+    "import-name": [
       true,
-      "never-prefix"
-    ],
-    "no-implicit-dependencies": [
-      true,
-      "dev"
-    ],
-    "missing-jsdoc": [
-      false
-    ],
-    "no-unused-variable": true
+      {
+        "react": "React",
+        "react-dom": "ReactDOM",
+        "*.scss": "styles"
+      }
+    ]
   }
 }

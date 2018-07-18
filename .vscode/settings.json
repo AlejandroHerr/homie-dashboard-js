@@ -1,3 +1,9 @@
 {
   "javascript.implicitProjectConfig.checkJs": true,
+  "eslint.enable": false,
+  "tslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "unmount"
+  ],
 }

@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 import configureStore from './store/configureStore';
 import App from './App';
-import './styles/index.scss';
+import 'sanitize.css/sanitize.css';
 
-const history = createHistory();
+const history = createBrowserHistory();
 const store = configureStore(history);
 
 ReactDOM.render(

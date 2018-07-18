@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 
-import counterReducer from './counter/reducer';
+import counterReducer, { CounterState } from './counter/reducer';
+
+export interface State {
+  counter: CounterState;
+}
 
 const rootReducer = combineReducers({
   counter: counterReducer,

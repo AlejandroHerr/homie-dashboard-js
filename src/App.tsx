@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Main from './container/Main';
 import NotFoundPage from './components/NotFoundPage';
 
+/* tslint:disable-next-line:variable-name */
 const App = () => (
   <Switch>
     <Route exact path="/" component={Main} />
